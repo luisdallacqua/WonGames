@@ -25,3 +25,5 @@ function App({ Component, pageProps }: AppProps) {
 }
 
 export default App
+
+// Comentário para teste
