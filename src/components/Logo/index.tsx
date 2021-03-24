@@ -7,7 +7,7 @@ export type LogoProps = {
 }
 
 const Logo = ({
-  color = 'white',
+  color = 'black',
   size = 'normal',
   hideOnMobile = false
 }: LogoProps) => (
