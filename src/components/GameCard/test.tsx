@@ -28,7 +28,7 @@ describe('<GameCard />', () => {
       props.img
     )
 
-    expect(screen.getByLabelText(/add to wish list/i)).toBeInTheDocument()
+    expect(screen.getByLabelText(/add to wishlist/i)).toBeInTheDocument()
   })
 
   it('should render price in label', () => {
