@@ -19,9 +19,9 @@ const TextField = ({
   label,
   labelFor = '',
   initialValue = '',
-  onInput,
-  disabled = false,
   error,
+  disabled = false,
+  onInput,
   ...props
 }: TextFieldProps) => {
   const [value, setValue] = useState(initialValue)
@@ -42,6 +42,7 @@ const TextField = ({
           type="text"
           onChange={onChange}
           value={value}
+          iconPosition={iconPosition}
           disabled={disabled}
           {...props}
         />
