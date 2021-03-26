@@ -53,6 +53,7 @@ export const Icon = styled.div<IconPositionProps>`
     }
   `}
 `
+
 export const Error = styled.p`
   ${({ theme }) => css`
     color: ${theme.colors.red};
@@ -70,7 +71,6 @@ const wrapperModifiers = {
       color: ${theme.colors.red};
     }
   `,
-
   disabled: (theme: DefaultTheme) => css`
     ${Label},
     ${Input},

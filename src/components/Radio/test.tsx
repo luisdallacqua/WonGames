@@ -7,9 +7,7 @@ import Radio from '.'
 
 describe('<Radio />', () => {
   it('should render with label (white)', () => {
-    const { container } = renderWithTheme(
-      <Radio label="Radio" labelFor="check" value="anyValue" />
-    )
+    renderWithTheme(<Radio label="Radio" labelFor="check" value="anyValue" />)
 
     const label = screen.getByText('Radio')
     expect(label).toBeInTheDocument()
