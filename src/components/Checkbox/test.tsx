@@ -32,6 +32,7 @@ describe('<Checkbox />', () => {
     })
   })
 
+  //to check if when checkbox is marked the onCheck function is called
   it('should render without black label', async () => {
     const onCheck = jest.fn()
 
@@ -46,6 +47,7 @@ describe('<Checkbox />', () => {
     expect(onCheck).toHaveBeenCalledWith(false)
   })
 
+  //for acessibility with tab
   it('should render without black label', async () => {
     renderWithTheme(<Checkbox label="Checkbox" labelFor="Checkbox" />)
     expect(document.body).toHaveFocus()
