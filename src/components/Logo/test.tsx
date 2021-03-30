@@ -6,14 +6,14 @@ import Logo from '.'
 
 describe('<Logo />', () => {
   it('should render a black label by default', () => {
-    renderWithTheme(<Logo />)
+    renderWithTheme(<Logo color="black" />)
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
       color: '#030517'
     })
   })
 
   it('should render a white label when the color is passed', () => {
-    renderWithTheme(<Logo color="white" />)
+    renderWithTheme(<Logo />)
     expect(screen.getByLabelText(/Won Games/i).parentElement).toHaveStyle({
       color: '#FAFAFA'
     })
