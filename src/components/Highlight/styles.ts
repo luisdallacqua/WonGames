@@ -53,7 +53,6 @@ export const FloatImage = styled.img`
     max-height: 23rem;
     max-width: 100%;
     align-self: end;
-
     ${media.greaterThan('medium')`
       max-height: 32rem;
     `}
@@ -65,7 +64,6 @@ export const Content = styled.div`
     grid-area: content;
     z-index: ${theme.layers.base};
     padding: ${theme.spacings.xsmall};
-
     ${media.greaterThan('medium')`
       align-self: end;
       padding: ${theme.spacings.large};
@@ -84,7 +82,7 @@ export const Title = styled.h2`
   `}
 `
 
-export const Subtitle = styled.h3`
+export const SubTitle = styled.h3`
   ${({ theme }) => css`
     font-size: ${theme.font.sizes.small};
     font-weight: ${theme.font.light};
