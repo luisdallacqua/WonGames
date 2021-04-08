@@ -26,8 +26,10 @@
     ]
   },
   "dependencies": {
+    "@apollo/client": "^3.3.14",
     "@styled-icons/boxicons-regular": "^10.23.0",
     "@styled-icons/fa-brands": "^10.26.0",
+    "graphql": "^15.5.0",
     "next": "10.0.4",
     "next-pwa": "^5.0.2",
     "polished": "^4.1.0",
