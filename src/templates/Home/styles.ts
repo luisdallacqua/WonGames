@@ -58,14 +58,6 @@ export const SectionNews = styled(Sections)`
 
 export const SectionMostPopular = styled(Sections)``
 
-export const SectionUpcoming = styled(Sections)`
-  ${({ theme }) => css`
-    ${HighlightStyles.Wrapper} {
-      margin-top: calc(${theme.spacings.xlarge} * 2);
-    }
-  `}
-`
-
 export const SectionFreeGames = styled(Sections)``
 
 export const SectionFooter = styled.section`

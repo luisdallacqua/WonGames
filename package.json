@@ -18,6 +18,17 @@
     "storybook": "start-storybook -s ./public -p 6006",
     "build-storybook": "build-storybook -s ./public"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "src/**/*": [
+      "yarn lint --fix",
+      "yarn test --findRelatedTests --bail"
+    ]
+  },
   "dependencies": {
     "@apollo/client": "^3.3.14",
     "@styled-icons/boxicons-regular": "^10.23.0",
