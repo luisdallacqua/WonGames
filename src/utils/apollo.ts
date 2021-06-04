@@ -1,22 +1,18 @@
-import {
-  ApolloClient,
-  HttpLink,
-  InMemoryCache,
-  NormalizedCacheObject
-} from '@apollo/client'
+import { ApolloClient, HttpLink, NormalizedCacheObject } from '@apollo/client'
 import { useMemo } from 'react'
+import apolloCache from './apolloCache'
 
-let apolloClient: ApolloClient<NormalizedCacheObject>
+let apolloClient: ApolloClient<NormalizedCacheObject | null>
 
 function createApolloClient() {
   return new ApolloClient({
     ssrMode: typeof window === 'undefined', //that defines if are server or client
     link: new HttpLink({ uri: 'http://localhost:1337/graphql' }), //if was only uri only accepts http. and not isomorphic links
-    cache: new InMemoryCache()
+    cache: apolloCache
   })
 }
 
-export function initializeApollo(initialState = {}) {
+export function initializeApollo(initialState = null) {
   //if apolloclient is initialized, will not initialize again. and then, recover cache.
   const apolloClientGlobal = apolloClient ?? createApolloClient()
 
@@ -34,7 +30,7 @@ export function initializeApollo(initialState = {}) {
   return apolloClient
 }
 
-export function useApollo(initialState = {}) {
+export function useApollo(initialState = null) {
   const store = useMemo(() => initializeApollo(initialState), [initialState])
   return store
 }
