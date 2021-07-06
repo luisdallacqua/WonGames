@@ -32,7 +32,7 @@ export default function Index(props: GameTemplateProps) {
   return <Game {...props} />
 }
 
-// gerar em build time (/game/bla, /bame/foo ...)
+// gerar em build time as rotas das páginas (/game/bla, /bame/foo ...)
 export async function getStaticPaths() {
   const { data } = await apolloClient.query<QueryGames, QueryGamesVariables>({
     query: QUERY_GAMES,
@@ -53,7 +53,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     QueryGameBySlugVariables
   >({
     query: QUERY_GAME_BY_SLUG,
-    variables: { slug: `${params?.slug}` }
+    variables: { slug: `${params?.slug}` },
+    fetchPolicy: 'no-cache' //igual a home
   })
 
   if (!data.games.length) {
@@ -77,8 +78,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   >({ query: QUERY_UPCOMING, variables: { date: TODAY } })
 
   return {
+    revalidate: 60,
     props: {
-      revalidate: 60,
       cover: `http://localhost:1337${game.cover?.src}`,
       gameInfo: {
         title: game.name,
